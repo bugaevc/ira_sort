@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    </head>
+    <body>
+        <section>
+            <h1>IraSort</h1>
+            <p>
+                IraSort, named after my awesome friend
+                <a href="https://new.vk.com/id141788557">Ira</a>,
+                sometimes referred to as
+                <a href="https://www.wikiwand.com/en/Insertion_sort">insertion sort</a>,
+                is a <b>quadratic sorting algorithm</b>
+                that is easy to implement and comprehend.
+            </p>
+            <p>
+                Scroll down to see a demo and implementations
+            </p>
+        </section>
+        <section>
+            <b>TWO</b>
+        </section>
+        <section>
+            <h1>Implementations</h1>
+            <div class="impls">
+                <div>
+                    <h3>Python</h3>
+                    <pre>
+def ira_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(i+1, n):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+                    </pre>
+                </div>
+                <div>
+                    <h3>Rust</h3>
+                    <pre>
+fn ira_sort&lt;T: Ord&gt;(arr: &mut [T]) {
+    let n = arr.len();
+    for i in 0..n {
+        for j in i+1..n {
+            if arr[i] > arr[j] {
+                arr.swap(i, j);
+            }
+        }
+    }
+}
+                    </pre>
+                </div>
+                <div>
+                    <h3>C++</h3>
+                    <pre>
+#include &lt;vector&gt;
+
+template &lt;typename T&gt;
+void ira_sort(std::vector&lt;T&gt; &arr) {
+    size_t n = arr.size();
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = i+1; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                std::swap(arr[i], arr[j]);
+            }
+        }
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
